@@ -48,7 +48,7 @@ class PlanController extends Controller
 
     public function stripePost(Request $request)
     {
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Stripe::setApiKey("sk_test_51MrovhK74lFSh15wPCGvLl5aNeNN16z8rNXs8b8v2Au6YKiLihrzMKKX4ilj4gPaTkGCS3jLAorfEhlESaYLi3Ml00137FXzSt");
 
         Stripe\Charge::create([
             "amount" => 100 * 100,
