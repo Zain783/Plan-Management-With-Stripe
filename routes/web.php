@@ -19,10 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('admin/plans/store', [PlanController::class, 'store'])->name('admin.plans.store');
     Route::get('/plans/subscribe/{id}', [UserPlansController::class, 'subscribe'])->name('user.plans.subscribe');
-
-
     Route::get('stripe/{id}', [UserPlansController::class, 'stripe'])->name("plan.purchase");
-    Route::post('stripe', [UserPlansController::class, 'stripePost'])->name('stripe.post');
+    Route::post('stripe', [UserPlansController::class, 'subscribe'])->name('stripe.post');
 });
 
 
